@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/HoboDermo/fn-runner.git"
   },
+  "engines" : {
+    "node" : ">=0.10"
+  },
   "keywords": [
     "fn-runner",
     "fnRunner",
