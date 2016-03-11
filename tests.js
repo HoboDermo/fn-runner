@@ -38,6 +38,18 @@ describe('start', function(done) {
     }, 500);
   });
 
+  it('runs the function periodically when started at initialisation', function () {
+    var counter = 0;
+    var fn = function() { counter++; };
+    var runner = new fnRunner(100, fn, true);
+
+    setTimeout(function() {
+      runner.stop();
+      assert.strictEqual(counter, 5);
+      done();
+    }, 500);
+  });
+
   it('returns false when function is already running', function () {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
@@ -87,6 +99,15 @@ describe('isStopped', function() {
     var isStoppedResult = runner.isStopped();
 
     assert.ok(isStoppedResult);
+  });
+
+  it('returns true for isStopped when not running at initialisation with startImmediately set to true', function () {
+    var fn = function() { };
+    var runner = new fnRunner(100, fn, true);
+
+    var isStoppedResult = runner.isStopped();
+
+    assert.equal(isStoppedResult, false);
   });
 
   it('returns true for isStopped when not running after stop', function () {

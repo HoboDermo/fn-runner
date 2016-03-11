@@ -1,4 +1,6 @@
-# fn-runner [![Build Status](https://travis-ci.org/HoboDermo/fn-runner.svg?branch=master)](https://travis-ci.org/HoboDermo/fn-runner)
+# fn-runner
+==========
+[![Build Status](https://travis-ci.org/HoboDermo/fn-runner.svg?branch=master)](https://travis-ci.org/HoboDermo/fn-runner)
 
 > A simple task runner to run a function periodically
 

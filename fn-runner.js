@@ -4,8 +4,9 @@
  * @class FnRunner
  * @param {number} _timeout - the number of milliseconds until the callback is run
  * @param {function} _callback - the function to be called after each timeout
+ * @param {boolean} _startImmediately - when true start runner immediately
  */
-function FnRunner(_timeout, _callback) {
+function FnRunner(_timeout, _callback, _startImmediately) {
 
   if(isNaN(_timeout)) throw new TypeError('Timeout must be a number.');
   if(typeof _callback !== 'function') throw new TypeError('Callback must be a function.');
@@ -60,6 +61,9 @@ function FnRunner(_timeout, _callback) {
     }
   }
 
+  if(_startImmediately) {
+    this.start();
+  }
 }
 
 module.exports = FnRunner;
