@@ -1,6 +1,6 @@
 {
   "name": "fn-runner",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple task runner to run a function periodically",
   "main": "fn-runner.js",
   "scripts": {
