@@ -19,6 +19,8 @@ var fn = function () {
     //Logic
 };
 
+//Timeout 1000ms
+//Callback fn
 var runner1 = new fnRunner(1000, fn);
 
 runner1.start(); //Run fn() every 1000ms
@@ -29,6 +31,9 @@ runner1.stop(); //Stop running fn()
 runner1.isStopped();
 //=> true
 
+//Timeout 1000ms
+//Callback fn
+//Start Immediately true
 var runner2 = new fnRunner(1000, fn, true);
 
 runner2.isStopped();
