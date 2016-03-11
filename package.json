@@ -29,6 +29,6 @@
   "homepage": "https://github.com/HoboDermo/fn-runner#readme",
   "devDependencies": {
     "mocha": "*",
-    "uglify": "*"
+    "uglify-js": "*"
   }
 }
