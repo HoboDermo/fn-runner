@@ -1,29 +1,29 @@
 var assert = require('assert');
 var fnRunner = require('./fn-runner');
 
-describe('constructor', function () {
-  it('throws an error when timeout is not a number', function () {
+describe('constructor', function() {
+  it('throws an error when timeout is not a number', function() {
     var createRunner = function() {
       new fnRunner('not a number', function() {});
     };
     assert.throws(createRunner, TypeError);
   });
 
-  it('throws an error when callback is not a function', function () {
+  it('throws an error when callback is not a function', function() {
     var createRunner = function() {
       new fnRunner(1000, 'not a function');
     };
     assert.throws(createRunner, TypeError);
   });
 
-  it('accepts a string representation of a number', function () {
+  it('accepts a string representation of a number', function() {
     var runner = new fnRunner('100', function() {});
     assert.ok(runner instanceof fnRunner);
   });
 });
 
 describe('start', function(done) {
-  it('runs the function periodically when started', function () {
+  it('runs the function periodically when started', function() {
     var counter = 0;
     var fn = function() { counter++; };
     var runner = new fnRunner(100, fn);
@@ -38,7 +38,7 @@ describe('start', function(done) {
     }, 500);
   });
 
-  it('runs the function periodically when started at initialisation', function () {
+  it('runs the function periodically when started at initialisation', function() {
     var counter = 0;
     var fn = function() { counter++; };
     var runner = new fnRunner(100, fn, true);
@@ -50,7 +50,7 @@ describe('start', function(done) {
     }, 500);
   });
 
-  it('returns false when function is already running', function () {
+  it('returns false when function is already running', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
 
@@ -62,7 +62,7 @@ describe('start', function(done) {
 });
 
 describe('stop', function() {
-  it('stops running the function when stopped', function () {
+  it('stops running the function when stopped', function() {
     var counter = 0;
     var fn = function() { counter++; };
     var runner = new fnRunner(100, fn);
@@ -81,7 +81,7 @@ describe('stop', function() {
     }, 500);
   });
 
-  it('returns false when the function is already stopped', function () {
+  it('returns false when the function is already stopped', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
 
@@ -92,7 +92,7 @@ describe('stop', function() {
 });
 
 describe('isStopped', function() {
-  it('returns true for isStopped when not running at initialisation', function () {
+  it('returns true for isStopped when not running at initialisation', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
 
@@ -101,7 +101,7 @@ describe('isStopped', function() {
     assert.ok(isStoppedResult);
   });
 
-  it('returns true for isStopped when not running at initialisation with startImmediately set to true', function () {
+  it('returns true for isStopped when not running at initialisation with startImmediately set to true', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn, true);
 
@@ -110,7 +110,7 @@ describe('isStopped', function() {
     assert.equal(isStoppedResult, false);
   });
 
-  it('returns true for isStopped when not running after stop', function () {
+  it('returns true for isStopped when not running after stop', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
 
@@ -121,7 +121,7 @@ describe('isStopped', function() {
     assert.ok(isStoppedResult);
   });
 
-  it('returns false for isStopped when running', function () {
+  it('returns false for isStopped when running', function() {
     var fn = function() { };
     var runner = new fnRunner(100, fn);
 

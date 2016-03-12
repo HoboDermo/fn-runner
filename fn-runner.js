@@ -4,7 +4,7 @@
  * @class FnRunner
  * @param {number} _timeout - the number of milliseconds until the callback is run
  * @param {function} _callback - the function to be called after each timeout
- * @param {boolean} _startImmediately - when true start runner immediately
+ * @param {boolean} [_startImmediately=false] - when true start runner immediately
  */
 function FnRunner(_timeout, _callback, _startImmediately) {
 
