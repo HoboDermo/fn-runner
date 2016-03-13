@@ -1,6 +1,7 @@
 
 /**
  * Construct a new function runner
+ * @constructor
  * @class FnRunner
  * @param {number} _timeout - the number of milliseconds until the callback is run
  * @param {function} _callback - the function to be called after each timeout
